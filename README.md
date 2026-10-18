@@ -24,5 +24,5 @@ pip install -r requirements.txt
 ### Launch app
 To bootstrap the app 
 ```
-streamlit run app.py
+streamlit run streamlit_app.py
 ```
