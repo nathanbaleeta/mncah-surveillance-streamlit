@@ -62,7 +62,7 @@ except FileNotFoundError:
 # -----------------------------------------------------------------------------
 st.sidebar.title("🎛️ Navigation & Filters")
 
-# 1. Geographic Area Filter
+# Geographic Area Filter
 available_countries = sorted(df_long['geographic_area'].unique().tolist())
 selected_countries = st.sidebar.multiselect(
     "🌍 Geographic Area:",
@@ -70,7 +70,7 @@ selected_countries = st.sidebar.multiselect(
     default=available_countries
 )
 
-# 2. Gender / Sex Filter
+# Gender / Sex Filter
 available_sex = sorted(df_long['sex'].unique().tolist())
 selected_sex = st.sidebar.multiselect(
     "👤 Gender / Sex:",
@@ -78,7 +78,7 @@ selected_sex = st.sidebar.multiselect(
     default=['Total'] if 'Total' in available_sex else available_sex
 )
 
-# 3. Indicator Filter
+# Indicator Filter
 available_indicators = sorted(df_long['indicator'].unique().tolist())
 default_indicators = [available_indicators[0]] if available_indicators else []
 selected_indicators = st.sidebar.multiselect(
@@ -87,7 +87,7 @@ selected_indicators = st.sidebar.multiselect(
     default=default_indicators
 )
 
-# 4. Year Range Slider
+# Year Range Slider
 min_year = int(df_long['Year'].min())
 max_year = int(df_long['Year'].max())
 selected_years = st.sidebar.slider(
@@ -97,7 +97,7 @@ selected_years = st.sidebar.slider(
     value=(2005, max_year)
 )
 
-# 5. Data Threshold Option
+# Data Threshold Option
 exclude_zeros = st.sidebar.checkbox("Exclude Unreported / Zero Values", value=True)
 
 
