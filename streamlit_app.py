@@ -60,7 +60,7 @@ except FileNotFoundError:
 # -----------------------------------------------------------------------------
 # SIDEBAR FILTERS
 # -----------------------------------------------------------------------------
-st.sidebar.title("🎛️ Navigation & Filters")
+st.sidebar.title("Filters")
 
 # Geographic Area Filter
 available_countries = sorted(df_long['geographic_area'].unique().tolist())
