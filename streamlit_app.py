@@ -65,7 +65,7 @@ st.sidebar.title("Filters")
 # Geographic Area Filter
 available_countries = sorted(df_long['geographic_area'].unique().tolist())
 selected_countries = st.sidebar.multiselect(
-    "🌍 Geographic Area:",
+    "Geographic Area:",
     options=available_countries,
     default=available_countries
 )
@@ -73,7 +73,7 @@ selected_countries = st.sidebar.multiselect(
 # Gender / Sex Filter
 available_sex = sorted(df_long['sex'].unique().tolist())
 selected_sex = st.sidebar.multiselect(
-    "👤 Gender / Sex:",
+    "Gender:",
     options=available_sex,
     default=['Total'] if 'Total' in available_sex else available_sex
 )
@@ -82,7 +82,7 @@ selected_sex = st.sidebar.multiselect(
 available_indicators = sorted(df_long['indicator'].unique().tolist())
 default_indicators = [available_indicators[0]] if available_indicators else []
 selected_indicators = st.sidebar.multiselect(
-    "📊 Health Indicators:",
+    "Health Indicators:",
     options=available_indicators,
     default=default_indicators
 )
@@ -91,7 +91,7 @@ selected_indicators = st.sidebar.multiselect(
 min_year = int(df_long['Year'].min())
 max_year = int(df_long['Year'].max())
 selected_years = st.sidebar.slider(
-    "📅 Year Range:",
+    "Year Range:",
     min_value=min_year,
     max_value=max_year,
     value=(2005, max_year)
